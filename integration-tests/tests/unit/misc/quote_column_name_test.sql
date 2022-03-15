@@ -4,6 +4,8 @@
     )
 }}
 
+-- This test causes a database error in BigQuery if implementation
+-- does not add back-tick quotes to column names.
 {% if target.type == 'bigquery' %}
     {% call dbt_unit_testing.test ('mock_pass_through', 'bigquery keywords are quoted') %}
         {% call dbt_unit_testing.mock_ref ('mock') %}
