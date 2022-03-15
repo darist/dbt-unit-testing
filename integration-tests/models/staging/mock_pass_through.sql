@@ -1,0 +1,1 @@
+SELECT * FROM {{ dbt_unit_testing.ref('mock') }}
